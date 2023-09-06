@@ -1,1 +1,324 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.content {
+  min-height:650px;
+  overflow:auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #177a89;
+}
+
+.header-right {
+  float: right;
+  margin-right: 50px;
+  padding-top: 15px;
+}
+
+.description {
+  margin: 100px;
+}
+
+hr{
+  height: 1px;
+  background-color: #7dba93;
+  border: none;
+  width: 95%
+}
+
+.logo{
+  width: 100px;
+  height: 60px;
+}
+
+.header ul, .footer ul {
+  list-style:none;
+}
+
+.header ul li, .footer ul li {
+  display:inline-block; 
+  padding:0 7px; 
+  position:relative;
+  font-size: 20px;
+}
+
+.header a {
+  color: #eee9e9;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.footer {
+  color: white;
+  text-align: center;
+  padding: 0px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color:#83b3b4;
+}
+.footer ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:1px;
+  line-height:1;
+  margin-bottom:0;
+}
+.footer li {
+  padding:0px;
+}
+.footer ul a {
+  color:#ededed;
+  text-decoration:none;
+  opacity:0.8;
+}
+.footer ul a:hover {
+  opacity:1;
+}
+.footer .copyright {
+  margin: top 1px;
+  text-align:center;
+  font-size:14px;
+  color:#574848;
+  margin-bottom:3;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.collections {
+  width: 90%;
+  background-color:#ffffff;
+  padding: 24px 36px;
+  margin: 40px auto;
+}
+
+.listing{
+  width: 80%;
+  background-color:#ffffff8e;
+  padding: 12px 18px;
+  border-left: 4px solid #4e6570;
+  margin: 20px auto;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.detail{
+  display: inline-block; 
+  width: 70%;
+}
+
+.description{
+  width: 92%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.listing a{
+  color: black;
+}
+
+.listing a:hover {
+  text-decoration: underline;
+}
+
+.listing a:active {
+  color: rgba(0, 0, 0, 0.543);
+}
+
+.search {
+  margin-top: 20px;
+}
+
+li a{
+  color: burlywood;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  letter-spacing: 0.8px;
+  margin-right:35px ;
+}
+
+.trades{
+  padding: 15px;
+  width: 100%;
+  background-color:  rgb(6, 29, 77);
+}
+
+.trades a{
+  color: burlywood;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#create--album-button{
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 2px;
+  font-family: sans-serif;
+  color: rgb(46, 87, 221);
+}
+label{
+  width: 100px;
+  font-family: sans-serif;
+  float: left;
+  margin-left: 50px;
+  margin-top: 30px;
+  text-align: right;
+  padding-right: 60px;
+  clear: left;
+}
+
+input, textarea{
+  margin-top: 30px;
+  width: 200px;
+}
+
+.tradeLists{
+  margin-top: 50px;
+  margin-left: 150px;
+  padding: 3px;
+}
+.tradeLists h2{
+  color:darkolivegreen;
+}
+.tradeLists ul{
+  padding: 10px;
+  margin-left: 70px;   
+  line-height: 20px;
+}
+
+.tradeLists ul a{
+  color:black;
+  text-align: justify;
+  
+}
+
+.trade-detail-class{
+  margin-left: 80px;
+  margin-top: 100px;
+  width: 70%;
+  height: 100%;
+  padding: 10px;
+}
+
+.trade-detail-class input{
+  width: 70px;
+  color:darkslategrey;
+  margin-top: 0;
+  text-align: justify;
+  padding: 2px;
+  padding-left: 1px;
+  margin-left: 10px;
+}
+
+.trade-detail-class h2{
+  width: 400px;
+  margin-top: 0;
+  font-family: sans-serif;
+}
+
+
+.details-class{
+  padding: 5px;
+  margin-top: 10px;
+  float: inline-start;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.details-class p{
+  font-family: sans-serif;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.col2{
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 100px;
+  font-family: sans-serif;
+  line-height: 34px;
+}
+
+.trade-detail-class-two{
+  float: right;
+}
+
+.contactpage{
+  margin-left: 40px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 100px;
+}
+
+.aboutpage{
+  margin-left: 40px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 100px;
+}
+
+.login-right{
+  text-align: right;
+}
+
+.login-width{
+  width: 300px;
+}
+.profilebody{
+  text-align: justify;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: sans-serif;
+  text-align: left;
+  padding: 10px;
+  font-size: 25px;
+}
+
+p a{
+  color: rgb(73, 160, 51);
+  display: block;
+  text-align: left;
+  line-height: 40px;
+  letter-spacing: 0.8px;
+  margin-right:35px;
+}
+
+.error{
+  background: rgba(255, 64, 0, 0.7);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px;
+}
+.success{
+  background: rgba(29, 160, 35, 0.7);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px;
+}
