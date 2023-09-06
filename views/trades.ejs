@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+    <div class="tradeLists">
+          <% if(singers.length > 0){%>
+              <% singers.forEach(singer=>{%>
+             <h3><%=singer%><br> </h3>
+              <% trades.forEach(trade=>{ %>
+
+                <% if(trade.singer==singer){%>   
+                  <a href="/trades/<%=trade.id %>">
+                    <br><%=trade.name %></a><br>
+                <%}%>
+                <% }) %>
+              <%})%>
+          <%} else{%>
+            <p  id="nope" >No Albums available</p>
+            <%}%>   
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    
+    

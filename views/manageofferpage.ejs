@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs')%>
+<div class = "content">
+  <div class="card-view" >
+
+<p>Manage</p>
+<table class="profile">
+    <tr>
+      <th>Yours album in trade</th>
+      <th>Others album in trade</th>
+    </tr>
+    <tr>
+      <td> <a href="/trades/<%= item.id%>"> <%= item.name%></a> </td>
+      <td> <a href="#"> <%= item.offerName%></td> </a>
+    </tr>
+  </table>
+  <div id = "form">
+    <form action='/trades/<%= item.id%>/manageofferdelete?_method=delete' method="post">
+    <button type="submit">Cancel Offer</button>
+  </form>
+</div>
+</div>
+<%- include('./partials/footer.ejs')%>

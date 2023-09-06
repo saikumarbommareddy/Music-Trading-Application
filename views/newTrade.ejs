@@ -1,0 +1,29 @@
+<%- include('./partials/header.ejs')%>
+<form action="/trades" method="POST" id="simple-forms">
+  <div id = "labels">
+    <label>Singer</label>
+    <input type="text" id="SingerName-input" name= "singer" placeholder="Enter the Singer Name" required>
+  </div>
+  <div>
+    <label>Album</label>
+    <input type="text" id="name-input" name= "name" placeholder="Enter the Tilte" required>
+  </div>
+  <div>
+    <label>Genre</label>
+    <input type="text" id="genre-input"  name= "genre" placeholder="Enter Genre" required>
+  </div>
+  <div>
+    <td ><label for="status">Status:</label></td>
+    <td><input type="text" class="form-control" id="status"  name="status" placeholder="Available" required></td>
+  </div>
+  <div>
+    <label>Details</label>
+    <textarea rows="10" cols="50" name= "details" required minlength="10"></textarea>
+  </div>
+  <div>
+    <label>Year</label>
+    <input type="date" data-date-inline-picker="true" id="year-input" name= "year" data-polyfill="all" required>
+  </div>
+  <button type="submit" id="create--album-button">Create Album</button>
+</form>
+<%- include('./partials/footer.ejs')%>

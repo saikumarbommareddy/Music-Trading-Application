@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs')%>
+<form id="simple-forms" method="POST" action="/trades/<%= trade.id %>?_method=PUT">
+    <div id = "labels">
+        <label>Singer Name</label>
+        <input type="text" id="singerName-input" name= "singer" value="<%= trade.singer %>" required>
+    </div>
+    <div>
+        <label>Album Title</label>
+        <input type="text" id="name-input" name= "name" value="<%= trade.name %>" required>
+    </div>
+    <div>
+        <label>Genre</label>
+        <input type="text" id="genre-input"  name= "genre" value="<%= trade.genre %>" required>
+    </div>
+    <div>
+        <label>Details</label>
+        <textarea rows="10" cols="50" name= "details" required minlength="10"><%= trade.details %></textarea>
+    </div>
+    <div>
+        <label>Year</label>
+        <input type="date" data-date-inline-picker="true" id="year-input" value="<%= trade.year %>" name= "year" data-polyfill="all" required>
+    </div>
+    <button type="submit" id="create--album-button">Update</button>
+</form>
+<%- include('./partials/footer.ejs')%>

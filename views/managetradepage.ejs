@@ -1,0 +1,25 @@
+<%- include('./partials/header.ejs')%>
+<div class = "content">
+  <div class="card-view" >
+  <h1>Manage</h1>
+  <table class="profile">
+    <tr>
+      <th>Trade item</th>
+      <th>Own item</th>
+    </tr>
+    <tr>
+      <td> <a href="/items/<%= item.id%>"> <%= item.name%></a> </td>
+      <td> <a href="/"> <%= item.offerName%></td> </a>
+    </tr>
+  </table>
+  <div class="row">
+    <form action="/trades/<%= item.id%>/accept" method="get">
+    <button type="submit">Accept</button>
+  </form><br><br>
+  <form action="/trades/<%= item.id%>/reject" method="get">
+    <button type="submit">Reject</button>
+  </form>
+</div>
+</div>
+</div>
+<%- include('./partials/footer.ejs')%>

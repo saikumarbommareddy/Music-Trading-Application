@@ -1,0 +1,53 @@
+<%- include('./partials/header.ejs')%>
+
+<div class="trade-detail-class">
+  <form >
+    <% if(user == trade.author._id) { %>
+    <div class="row1">
+      <button  class="button" type="submit" formmethod="GET" formaction="/trades/<%= trade.id%>/edit" >UPDATE</button>
+      <button  class="button" type="submit" formmethod="post" formaction="/trades/<%= trade.id%>?_method=DELETE">DELETE</button>
+      
+    </div>
+    <% };%>
+  </form>
+    <div class="row1">
+      <%if(!(user== trade.author._id)&&trade.status=="Available"){%>
+        <form action="/trades/<%= trade.id%>/trade" method="get">
+          <div class="row1">
+          <button type="submit" class="button">Trade</button>
+        </div>
+        </form>
+        <%if(trade.Watchlist===false){%>
+          <form action="/trades/<%= trade.id%>/watchlist" method="post">
+            <div class="row1">
+            <label for="Name"></label><br />
+            <input type="hidden" id="Name" name="Name" value="<%= trade.name%>" required/>
+            <button type="submit" class="button" id="save"> Add to Wishlist</button>
+          </div>
+          </form>
+        <%}else{%>
+          <form action="/trades/<%= trade.id%>/savedelete?_method=delete" method="post">
+          <button type="submit" class="button">UnWish</button>
+        </form>
+        <%}%>
+        <%}%>
+      </form>
+    </div>
+    </form>               
+                <div class="row1">
+                  <div class="col2">
+                    Created by <%=trade.author.firstName +" "+trade.author.lastName%> <br> Album - <%=trade.name%> <br> Status - <%=trade.status%> <br> Sung by <%=trade.singer%> <br> Genre - <%=trade.genre%> <br> Year - <%= trade.year%>
+                  </div>
+                </div>
+                <div class="details-class">
+                  <h3>Details</h3>
+                  <p><%=trade.details%></p>
+                </div>
+
+              </div>
+            </div>             
+      </div>       
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs')%>
