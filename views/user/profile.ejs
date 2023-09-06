@@ -1,0 +1,97 @@
+<%- include('../partials/header.ejs')%>
+
+<div class = "profilebody">
+    <div>
+    <h2>Welcome, <%=user.firstName%></h2>
+    <table class="profile">
+        <tr>
+            <th>Album</th>
+            <th>Singer</th> 
+        </tr>
+    <%if(trades.length){%>
+        <p>You have created the following trades</p>
+        <%trades.forEach(trade=>{%>       
+            <tr>
+                <td><a  href="/trades/<%= trade.id%>"><%= trade.name%></a></td>
+                <td><p><%= trade.singer%></p></td>                
+                <td>
+                    <%if(trade.status==="Offer pending"){%>
+                        <form action="/trades/<%= trade.id%>/manage" method="get">
+                          <button type="submit">Open this request</button>
+                        </form>
+                    <%}%>
+                </td>                        
+            </tr>
+        <%});
+    } else {%>
+        <p>You have not created any trades</p>
+    <%}%>
+</table> 
+
+<p><b>Wishlist</b></p>
+<%if(saves.length){%> <%let names = new Array();%> <%saves.forEach(save=>{%>
+<%names.push(save.Name);%> <%});%> <%saved.forEach(item=>{%>
+<%if(names.includes(item.name)){%>
+<table class="profile">
+  <tr>
+    <th>Album</th>
+    <th>Singer</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="/trades/<%= item.id%>"><p><%= item.name%></p></a>
+    </td>
+    <td><p><%= item.singer%></p></td>
+    <td><p><%= item.status%></p></td>
+    <td>
+      <form
+        action="/trades/<%= item.id%>/savedelete?_method=delete"
+        method="post">
+        <button type="submit" class="function-buttons">Unwish</button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+<%}%> <%})%> <%}else{%>
+<p>No item in your wishlist</p>
+<%};%>
+
+<p><b>Offers</b></p>
+  <%if(offers.length){%> <%let names = new Array();%>
+  <%offers.forEach(offer=>{%> <%names.push(offer.Name);%> <%});%>
+  <%offered.forEach(item=>{%> <%if(names.includes(item.name)){%>
+  <table class="profile">
+    <tr>
+      <th>Album</th>
+      <th>Singer</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="/trades/<%= item.id%>"><p><%= item.name%></p></a>
+      </td>
+      <td><p><%= item.singer%></p></td>
+      <td><p><%= item.status%></p></td>
+      <td>
+        <form
+          action="/trades/<%= item.id%>/offerdelete?_method=delete"
+          method="post"
+        >
+          <button type="submit" class="function-buttons">Cancel Offer</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <%}%> <%})%> <%}else{%>
+  <p>No offers found</p>
+  <%};%>
+
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs')%>
